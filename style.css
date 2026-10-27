@@ -1,0 +1,315 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Patrick+Hand&display=swap');
+
+/* ===== GENERAL STYLING ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: #fff7fb;
+    color: #49345e;
+    text-align: center;
+}
+
+/* ===== HEADER AND NAVIGATION ===== */
+
+header {
+    background: #f8d9eb;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 28px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #49345e;
+    margin: 8px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #d65b9c;
+}
+
+/* ===== COMMON SECTION STYLING ===== */
+
+section {
+    padding: 65px 8%;
+}
+
+h2 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 36px;
+    margin-bottom: 25px;
+}
+
+/* ===== HOME / HERO SECTION ===== */
+
+.hero {
+    background: linear-gradient(135deg, #e8dcfa, #ffd9e9);
+    min-height: 550px;
+}
+
+.small-heading {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 22px;
+}
+
+h1 {
+    font-family: 'Patrick Hand', cursive;
+    font-size: clamp(45px, 7vw, 75px);
+    margin: 20px 0;
+}
+
+h1 span {
+    color: #d34f98;
+}
+
+.hero > p:not(.small-heading) {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn {
+    display: inline-block;
+    background: #e99bc5;
+    color: #49345e;
+    padding: 13px 25px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #d77bb0;
+    transform: translateY(-3px);
+}
+
+/* ===== COVER PHOTO ===== */
+
+.cover-photo {
+    max-width: 320px;
+    margin: 35px auto 0;
+    padding: 12px;
+    background: white;
+    box-shadow: 0 8px 25px #49345e25;
+    transform: rotate(-2deg);
+}
+
+.cover-photo img {
+    display: block;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.cover-photo p {
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    margin: 12px 0 5px;
+}
+
+/* ===== ABOUT SECTION ===== */
+
+.about {
+    background: #fff7fb;
+}
+
+.about p,
+.letter p {
+    max-width: 750px;
+    margin: 18px auto;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+/* ===== MEMORY GALLERY ===== */
+
+.memories {
+    background: #f0e7fc;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 35px auto 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    padding: 8px;
+    background: white;
+    box-shadow: 0 5px 15px #49345e20;
+    transition: 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.04) rotate(1deg);
+}
+
+/* ===== LETTER SECTION ===== */
+
+.letter {
+    background: #fff7fb;
+}
+
+.signature {
+    font-family: 'Patrick Hand', cursive;
+    color: #d34f98;
+    font-size: 23px !important;
+}
+
+/* ===== BIRTHDAY COUNTDOWN ===== */
+
+.birthday {
+    background: linear-gradient(135deg, #ffd9e9, #e8dcfa);
+}
+
+#countdown {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 25px 0;
+    line-height: 1.8;
+}
+
+/* ===== SURPRISE MESSAGE AND VIDEO ===== */
+
+#surpriseMessage {
+    max-width: 650px;
+    margin: 25px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffffff, #fff0f7);
+    border: 2px solid #f3c6e5;
+    border-radius: 22px;
+    line-height: 1.9;
+    box-shadow: 0 8px 25px rgba(180, 100, 150, 0.15);
+    animation: surpriseAppear 0.5s ease;
+}
+
+/* Keep the surprise hidden until the button is clicked */
+#surpriseMessage[hidden] {
+    display: none;
+}
+
+.surprise-content h3 {
+    font-family: 'Patrick Hand', cursive;
+    color: #d64f87;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.surprise-content p {
+    margin: 15px 0;
+}
+
+.surprise-content video,
+#birthdayVideo {
+    display: block;
+    width: 100%;
+    max-height: 450px;
+    margin: 20px auto;
+    border-radius: 15px;
+    background: #eadff5;
+    object-fit: contain;
+}
+
+/* Video surprise animation */
+
+@keyframes surpriseAppear {
+    from {
+        opacity: 0;
+        transform: translateY(15px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #49345e;
+    color: white;
+    padding: 25px;
+    line-height: 1.8;
+}
+
+/* ===== MOBILE RESPONSIVENESS ===== */
+
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        line-height: 2.2;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .gallery img {
+        height: 160px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    #countdown {
+        font-size: 19px;
+    }
+
+    #surpriseMessage {
+        padding: 18px;
+    }
+
+    .surprise-content h3 {
+        font-size: 26px;
+    }
+
+    .surprise-content video,
+    #birthdayVideo {
+        max-height: 350px;
+    }
+}
